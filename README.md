@@ -4,6 +4,7 @@
 Easy to use CSS3 transitions for use in MeteorJS.  Works with iron:router.
 
 **Demo**: http://transitions-demo.meteor.com
+**Demo Repository**: https://github.com/jamielob/transitions-demo
 
 ## Example usage
 
