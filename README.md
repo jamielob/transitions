@@ -13,12 +13,20 @@ meteor add iron:router
 meteor add jamielob:transitions
 ```
 
-Set up your routes in iron:router an wrap your `{{>yield}}` in a `<div>` with an id of layout.
+Configure in iron:router to have a `layoutTemplate` called `layout`.
 
 ```
+Router.configure({layoutTemplate: 'layout'});
+```
+
+Create a template called `layout`.  Wrap your `{{>yield}}` in a `<div>` with an id of layout.
+
+```
+<template name="layout">
   <div id="layout">
     {{>yield}}
   </div>
+</template>
 ```
 
 Make sure any content that you want to transition is wrapped within a `<div>` with a class of `content`
