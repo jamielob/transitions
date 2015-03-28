@@ -119,4 +119,8 @@ Build the transition name using the options below.  For example, slideUpIn and s
 * carousel - Up | Down | Left | Right - Out | In
 * swing - Up | Down | Left | Right - Out | In
 * sweep - Up | Down | Left | Right - Out | In
->>>>>>> FETCH_HEAD
+
+## Known Issues / To Do
+
+* Newspaper transition not currently working on iOS Safari.
+* Add ability to specify layout target id and class

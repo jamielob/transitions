@@ -18,13 +18,14 @@
         //Inspired by https://github.com/nickw/meteor-mailbox
         this.find('#layout')._uihooks = {
           insertElement: function(node, next) {
-
+            // console.log('data-transition-in: ' + transitionIn);
             $(node).addClass('transition transition-in ' + transitionIn);
             $(node).insertBefore(next);
 
             animationDuration = UI._globalHelpers['s2ms']( $(node).css('animation-duration') );
             animationDelay = UI._globalHelpers['s2ms']( $(node).css('animation-delay') );
             animationDuration = animationDuration + animationDelay;
+
             Meteor.setTimeout(function() {
               $(node).removeClass('transition transition-in ' + transitionIn);
               if (transitionIn) transitionIn = '';
@@ -32,6 +33,7 @@
           },
 
           removeElement: function(node) {
+            //console.log('data-transition-out: ' + transitionOut);
             $(node).addClass('transition transition-out ' + transitionOut);
 
             animationDuration = UI._globalHelpers['s2ms']( $(node).css('animation-duration') );

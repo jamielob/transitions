@@ -23,29 +23,26 @@ sweep
 ++delay[100,200,300,...,1000]
  */
 
-
-
 /* Setup */
 
 html, body {
-	margin: 0;
+	height:100%;
 }
 #layout {
-	position: absolute;
+	position: relative;
 	width: 100%;
-	min-height: 100%;
+	height: 100%;
 	-webkit-perspective: 1200px;
 	-moz-perspective: 1200px;
 	perspective: 1200px;
-	-webkit-transform-style: preserve-3d;
-	transform-style: preserve-3d;
 }
 .content {
 	width: 100%;
-	min-height: 100%;
+	height: 100%;
 	position: absolute;
 	top: 0;
 	left: 0;
+	overflow: hidden;
 	-webkit-backface-visibility: hidden;
 	-moz-backface-visibility: hidden;
 	backface-visibility: hidden;
@@ -59,6 +56,13 @@ html, body {
 .onTop {
 	z-index: 999;
 }
+.transition-in {
+	z-index: -1;
+}
+.transition-out {
+	z-index: 888;
+}
+
 
 
 
@@ -107,8 +111,8 @@ html, body {
 /* fade */
 
 .fadeOut {
-	-webkit-animation: fade .7s ease both;
-	animation: fade .7s ease both;
+	-webkit-animation: fadeOut .7s ease both;
+	animation: fadeOut .7s ease both;
 }
 .fadeIn {
 	-webkit-animation: fadeIn .7s ease both;
@@ -761,11 +765,11 @@ html, body {
 
 /* fade */
 
-@-webkit-keyframes fade {
+@-webkit-keyframes fadeOut {
 	from { }
 	to { opacity: 0; }
 }
-@keyframes fade {
+@keyframes fadeOut {
 	from { }
 	to { opacity: 0; }
 }
