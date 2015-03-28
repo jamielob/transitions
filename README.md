@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 # Meteor Transitions
 
 Easy to use CSS3 transitions for use in MeteorJS.  Works with iron:router.
