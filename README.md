@@ -1,6 +1,6 @@
 # Meteor Transitions
 
-Easy to use CSS3 transitions for use in MeteorJS.  Works perfectly with iron:router.
+Easy to use CSS3 transitions for use in MeteorJS.  Works with iron:router.
 
 **Demo**: http://transitions-demo.meteor.com
 
