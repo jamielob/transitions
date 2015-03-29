@@ -12,7 +12,7 @@ scale
 pivot
 flip
 fall
-newspaper
+spin
 fold
 hinge
 room
@@ -310,17 +310,30 @@ html, body {
 }
 
 /* newspaper */
-.newspaperOut {
+.spinRightOut {
 	-webkit-transform-origin: 50% 50%;
 	transform-origin: 50% 50%;
-	-webkit-animation: newspaperOut .5s both ease-in;
-	animation: newspaperOut .5s both ease-in;
+	-webkit-animation: spinRightOut .5s both ease-in;
+	animation: spinRightOut .5s both ease-in;
 }
-.newspaperIn {
+.spinRightIn {
 	-webkit-transform-origin: 50% 50%;
 	transform-origin: 50% 50%;
-	-webkit-animation: newspaperIn .5s both ease-out;
-	animation: newspaperIn .5s both ease-out;
+	-webkit-animation: spinRightIn .5s both ease-out;
+	animation: spinRightIn .5s both ease-out;
+}
+
+.spinLeftOut {
+	-webkit-transform-origin: 50% 50%;
+	transform-origin: 50% 50%;
+	-webkit-animation: spinLeftOut .5s both ease-in;
+	animation: spinLeftOut .5s both ease-in;
+}
+.spinLeftIn {
+	-webkit-transform-origin: 50% 50%;
+	transform-origin: 50% 50%;
+	-webkit-animation: spinLeftIn .5s both ease-out;
+	animation: spinLeftIn .5s both ease-out;
 }
 
 /* hinge */
@@ -1081,22 +1094,43 @@ html, body {
 	100% { -webkit-transform: translateY(100%) rotateZ(17deg); transform: translateY(100%) rotateZ(17deg); }
 }
 
-/* newspaper */
+/* spin */
 
-@-webkit-keyframes newspaperOut {
-	from { }
-	to { -webkit-transform: translateZ(-3000px) rotateZ(360deg); opacity: 0; }
+@-webkit-keyframes spinRightOut {
+	from { -webkit-transform: rotate(0deg); opacity: 1; }
+	to {  -webkit-transform: rotate(180deg); opacity: 0; }
 }
-@keyframes newspaperOut {
-	from { }
-	to { -webkit-transform: translateZ(-3000px) rotateZ(360deg); transform: translateZ(-3000px) rotateZ(360deg); opacity: 0; }
+@keyframes spinRightOut {
+	from { transform: rotate(0deg); opacity: 1; }
+	to { transform: rotate(180deg); opacity: 0; }
 }
 
-@-webkit-keyframes newspaperIn {
-	from { -webkit-transform: translateZ(-3000px) rotateZ(-360deg); opacity: 0; }
+@-webkit-keyframes spinRightIn {
+	from { -webkit-transform: rotate(-180deg); opacity: 0; }
+	to { -webkit-transform: rotate(0deg); opacity: 1; }
 }
-@keyframes newspaperIn {
-	from { -webkit-transform: translateZ(-3000px) rotateZ(-360deg); transform: translateZ(-3000px) rotateZ(-360deg); opacity: 0; }
+@keyframes spinRightIn {
+	from { transform: rotate(-180deg); opacity: 0; }
+	to { transform: rotate(0deg); opacity: 1; }
+}
+
+@-webkit-keyframes spinLeftOut {
+	from { -webkit-transform: rotate(0deg); opacity: 1; }
+	to {  -webkit-transform: rotate(-180deg); opacity: 0; }
+}
+@keyframes spinLeftOut {
+	from { transform: rotate(0deg); opacity: 1; }
+	to { transform: rotate(-180deg); opacity: 0; }
+}
+
+
+@-webkit-keyframes spinLeftIn {
+	from { -webkit-transform: rotate(180deg); opacity: 0; }
+	to { -webkit-transform: rotate(0deg); opacity: 1; }
+}
+@keyframes spinLeftIn {
+	from { transform: rotate(180deg); opacity: 0; }
+	to { transform: rotate(0deg); opacity: 1; }
 }
 
 /* push */
