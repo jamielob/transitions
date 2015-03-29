@@ -336,17 +336,17 @@ html, body {
 	-webkit-animation: hingeRightOut .8s both ease;
 	animation: hingeRightOut .8s both ease;
 }
-.hingeTopOut {
+.hingeUpOut {
 	-webkit-transform-origin: 50% 0%;
 	transform-origin: 50% 0%;
-	-webkit-animation: hingeTopOut .8s both ease;
-	animation: hingeTopOut .8s both ease;
+	-webkit-animation: hingeUpOut .8s both ease;
+	animation: hingeUpOut .8s both ease;
 }
-.hingeBottomOut {
+.hingeDownOut {
 	-webkit-transform-origin: 50% 100%;
 	transform-origin: 50% 100%;
-	-webkit-animation: hingeBottomOut .8s both ease;
-	animation: hingeBottomOut .8s both ease;
+	-webkit-animation: hingeDownOut .8s both ease;
+	animation: hingeDownOut .8s both ease;
 }
 
 .hingeRightIn {
@@ -361,17 +361,17 @@ html, body {
 	-webkit-animation: hingeLeftIn .5s both ease;
 	animation: hingeLeftIn .5s both ease;
 }
-.hingeTopIn {
+.hingeUpIn {
 	-webkit-transform-origin: 50% 0%;
 	transform-origin: 50% 0%;
-	-webkit-animation: hingeTopIn .5s both ease;
-	animation: hingeTopIn .5s both ease;
+	-webkit-animation: hingeUpIn .5s both ease;
+	animation: hingeUpIn .5s both ease;
 }
-.hingeBottomIn {
+.hingeDownIn {
 	-webkit-transform-origin: 50% 100%;
 	transform-origin: 50% 100%;
-	-webkit-animation: hingeBottomIn .5s both ease;
-	animation: hingeBottomIn .5s both ease;
+	-webkit-animation: hingeDownIn .5s both ease;
+	animation: hingeDownIn .5s both ease;
 }
 
 /* fold */
@@ -1119,20 +1119,20 @@ html, body {
 	to { opacity: 0; -webkit-transform: rotateY(-90deg); transform: rotateY(-90deg); }
 }
 
-@-webkit-keyframes hingeTopOut {
+@-webkit-keyframes hingeUpOut {
 	from { }
 	to { opacity: 0; -webkit-transform: rotateX(-90deg); }
 }
-@keyframes hingeTopOut {
+@keyframes hingeUpOut {
 	from { }
 	to { opacity: 0; -webkit-transform: rotateX(-90deg); transform: rotateX(-90deg); }
 }
 
-@-webkit-keyframes hingeBottomOut {
+@-webkit-keyframes hingeDownOut {
 	from { }
 	to { opacity: 0; -webkit-transform: rotateX(90deg); }
 }
-@keyframes hingeBottomOut {
+@keyframes hingeDownOut {
 	from { }
 	to { opacity: 0; -webkit-transform: rotateX(90deg); transform: rotateX(90deg); }
 }
@@ -1153,17 +1153,17 @@ html, body {
 	from { opacity: 0; -webkit-transform: rotateY(90deg); transform: rotateY(90deg); }
 }
 
-@-webkit-keyframes hingeTopIn {
+@-webkit-keyframes hingeUpIn {
 	from { opacity: 0; -webkit-transform: rotateX(-90deg); }
 }
-@keyframes hingeTopIn {
+@keyframes hingeUpIn {
 	from { opacity: 0; -webkit-transform: rotateX(-90deg); transform: rotateX(-90deg); }
 }
 
-@-webkit-keyframes hingeBottomIn {
+@-webkit-keyframes hingeDownIn {
 	from { opacity: 0; -webkit-transform: rotateX(90deg); }
 }
-@keyframes hingeBottomIn {
+@keyframes hingeDownIn {
 	from { opacity: 0; -webkit-transform: rotateX(90deg); transform: rotateX(90deg); }
 }
 

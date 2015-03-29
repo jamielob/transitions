@@ -113,7 +113,7 @@ Build the transition name using the options below.  For example, slideUpIn and s
 * fall
 * newspaper - Out | In
 * fold - Up | Down | Left | Right - Out | In
-* hinge - Top | Bottom | Left | Right - Out | In
+* hinge - Up | Down | Left | Right - Out | In
 * room - Up | Down | Left | Right - Out | In
 * cube - Up | Down | Left | Right - Out | In
 * carousel - Up | Down | Left | Right - Out | In
