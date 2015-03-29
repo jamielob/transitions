@@ -47,7 +47,7 @@ Build the transition name using the options below.  For example, slideUpIn and s
 * pivot - Up | Down | Left | Right - Out | In
 * flip - Up | Down | Left | Right - Out | In
 * fall
-* spin - Out | In
+* spin - Left | Right - Out | In
 * fold - Up | Down | Left | Right - Out | In
 * hinge - Top | Bottom | Left | Right - Out | In
 * room - Up | Down | Left | Right - Out | In
