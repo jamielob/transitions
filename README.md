@@ -52,11 +52,11 @@ Build the transition name using the options below.  For example, slideUpIn and s
 * hinge - Top | Bottom | Left | Right - Out | In
 * room - Up | Down | Left | Right - Out | In
 * cube - Up | Down | Left | Right - Out | In
-* carousel - Up | Down | Left | Right - Out | In
 * swing - Up | Down | Left | Right - Out | In
 * sweep - Up | Down | Left | Right - Out | In
 
 
 ## Known Issues / To Do
 
+* Cube transition doesn't always fire correctly in iPhone Safari
 * Add ability to specify layout target id and class

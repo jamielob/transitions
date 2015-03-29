@@ -542,7 +542,7 @@ html, body {
 }
 
 /* carousel */
-.carouselLeftOut {
+/*.carouselLeftOut {
 	-webkit-transform-origin: 100% 50%;
 	transform-origin: 100% 50%;
 	-webkit-animation: carouselLeftOut .8s both ease;
@@ -589,7 +589,7 @@ html, body {
 	transform-origin: 50% 100%;
 	-webkit-animation: carouselDownIn .8s both ease;
 	animation: carouselDownIn .8s both ease;
-}
+}*/
 
 /* sides */
 .swingLeftOut {
@@ -1440,20 +1440,23 @@ html, body {
 
 /* carousel */
 
-@-webkit-keyframes carouselLeftOut {
-	from { }
+/*@-webkit-keyframes carouselLeftOut {
+	from { opacity: 1; -webkit-transform: translateX(0%) scale(1) rotateY(0deg); }
 	to { opacity: .3; -webkit-transform: translateX(-150%) scale(.4) rotateY(-65deg); }
 }
 @keyframes carouselLeftOut {
-	from { }
+	from { opacity: 1; transform: translateX(0%) scale(1) rotateY(0deg); }
 	to { opacity: .3; transform: translateX(-150%) scale(.4) rotateY(-65deg); }
 }
 
 @-webkit-keyframes carouselLeftIn {
 	from { opacity: .3; -webkit-transform: translateX(200%) scale(.4) rotateY(65deg); }
+	to { opacity: 1; -webkit-transform: translateX(0) scale(1) rotateY(0deg); }
 }
 @keyframes carouselLeftIn {
 	from { opacity: .3; transform: translateX(200%) scale(.4) rotateY(65deg); }
+	to { opacity: 1; transform: translateX(0) scale(1) rotateY(0deg); }
+
 }
 
 @-webkit-keyframes carouselRightOut {
@@ -1502,7 +1505,7 @@ html, body {
 }
 @keyframes carouselDownIn {
 	from { opacity: .3; transform: translateY(-200%) scale(.4) rotateX(65deg); }
-}
+}*/
 
 /* swing */
 
