@@ -17,7 +17,7 @@ fold
 hinge
 room
 cube
-carousel
+//carousel
 swing
 sweep
 ++delay[100,200,300,...,1000]
@@ -28,7 +28,9 @@ sweep
 html, body {
 	height:100%;
 }
-#layout {
+/* Set dynamically in JS to allow custom id and class names */
+/*
+#transitions-container {
 	position: relative;
 	width: 100%;
 	height: 100%;
@@ -36,7 +38,7 @@ html, body {
 	-moz-perspective: 1200px;
 	perspective: 1200px;
 }
-.content {
+.transitions-content {
 	width: 100%;
 	height: 100%;
 	position: absolute;
@@ -53,6 +55,7 @@ html, body {
 	-moz-transform-style: preserve-3d;
 	transform-style: preserve-3d;
 }
+*/
 
 .transition-in {
 	z-index: -1;
@@ -60,11 +63,16 @@ html, body {
 .transition-out {
 	z-index: 888;
 }
-
 .onTop,
 .transition-in.onTop,
 .transition-out.onTop {
 	z-index: 999;
+}
+/*Disable links while transitionin*/
+.transition-out a,
+.transition-in a {
+   pointer-events: none;
+   cursor: default;
 }
 
 
@@ -682,7 +690,10 @@ html, body {
 }
 
 /* animation delay classes */
-
+.delay1 {
+	-webkit-animation-delay: .01s;
+	animation-delay: .01s;
+}
 .delay100 {
 	-webkit-animation-delay: .1s;
 	animation-delay: .1s;
@@ -1591,13 +1602,13 @@ html, body {
 }
 
 @-webkit-keyframes sweepLeftIn {
-	0% { opacity: 0 }
+	0% { opacity: 0; -webkit-transform: translateZ(-500px) translateX(200%); }
 	25% { opacity: .7; -webkit-transform: translateZ(-500px) translateX(200%); }
 	75% { opacity: .7; -webkit-transform: translateZ(-500px); }
 	100% { opacity: 1; -webkit-transform: translateZ(0) translateX(0); }
 }
 @keyframes sweepLeftIn {
-	00% { opacity: 0 }
+	00% { opacity: 0; transform: translateZ(-500px) translateX(200%); }
 	25% { opacity: .7; transform: translateZ(-500px) translateX(200%); }
 	75% { opacity: .7; transform: translateZ(-500px); }
 	100% { opacity: 1; transform: translateZ(0) translateX(0); }
@@ -1617,13 +1628,13 @@ html, body {
 }
 
 @-webkit-keyframes sweepRightIn {
-	0% { opacity: 0 }
+	0% { opacity: 0; -webkit-transform: translateZ(-500px) translateX(-200%); }
 	25% { opacity: .7; -webkit-transform: translateZ(-500px) translateX(-200%); }
 	75% { opacity: .7; -webkit-transform: translateZ(-500px); }
 	100% { opacity: 1; -webkit-transform: translateZ(0) translateX(0); }
 }
 @keyframes sweepRightIn {
-	0% { opacity: 0 }
+	0% { opacity: 0; transform: translateZ(-500px) translateX(-200%); }
 	25% { opacity: .7; transform: translateZ(-500px) translateX(-200%); }
 	75% { opacity: .7;  transform: translateZ(-500px); }
 	100% { opacity: 1; transform: translateZ(0) translateX(0); }
@@ -1645,13 +1656,13 @@ html, body {
 }
 
 @-webkit-keyframes sweepUpIn {
-	0% { opacity: 0 }
+	0% { opacity: 0; -webkit-transform: translateZ(-500px) translateY(200%); }
 	25% { opacity: .7; -webkit-transform: translateZ(-500px) translateY(200%); }
 	75% { opacity: .7; -webkit-transform: translateZ(-500px); }
 	100% { opacity: 1; -webkit-transform: translateZ(0) translateY(0); }
 }
 @keyframes sweepUpIn {
-	0% { opacity: 0 }
+	0% { opacity: 0; transform: translateZ(-500px) translateY(200%); }
 	25% { opacity: .7; transform: translateZ(-500px) translateY(200%); }
 	75% { opacity: .7; transform: translateZ(-500px); }
 	100% { opacity: 1; transform: translateZ(0) translateY(0); }
@@ -1671,13 +1682,13 @@ html, body {
 }
 
 @-webkit-keyframes sweepDownIn {
-	0% { opacity: 0 }
+	0% { opacity: 0; -webkit-transform: translateZ(-500px) translateY(-200%); }
 	25% { opacity: .7; -webkit-transform: translateZ(-500px) translateY(-200%); }
 	75% { opacity: .7; -webkit-transform: translateZ(-500px); }
 	100% { opacity: 1; -webkit-transform: translateZ(0) translateY(0); }
 }
 @keyframes sweepDownIn {
-	0% { opacity: 0 }
+	0% { opacity: 0; transform: translateZ(-500px) translateY(-200%); }
 	25% { opacity: .7; transform: translateZ(-500px) translateY(-200%); }
 	75% { opacity: .7;  transform: translateZ(-500px); }
 	100% { opacity: 1; transform: translateZ(0) translateY(0); }
