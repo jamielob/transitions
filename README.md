@@ -65,9 +65,9 @@ Build the transition name using the options below.  For example, slideUpIn and s
 
 ## Additional Classes
 
-**onTop**: Ensures that the transition remains on top. Needed for some transition combinations.  For example, you might decide to use roomUpIn and onTop together like so - `data-transition-in="roomUpIn onTop`
+**onTop**: Ensures that the transition remains on top. Needed for some transition combinations.  For example, you might decide to use roomUpIn and onTop together like so - `data-transition-in="roomUpIn onTop"`
 
-**delay100**: Delays the transition from started for set time in ms.  Available in 100 increments up to 1000.  For example - `data-transition-in="sweepUpIn delay500`
+**delay100**: Delays the transition from started for set time in ms.  Available in 100 increments up to 1000.  For example - `data-transition-in="sweepUpIn delay500"`
 
 ## Known Issues / To Do
 
