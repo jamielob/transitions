@@ -16,7 +16,11 @@ Transitions = {};
         return ms;
       });
 
-      Template.layout.rendered = function() {
+      var test = {};
+      test = Template;
+
+
+      Template.layout.onRendered(function() {
         transitionIn = '';
         transitionOut = '';
 
@@ -88,7 +92,7 @@ Transitions = {};
           }
         }
 
-      };
+      });
 
       Template.layout.events({
 
