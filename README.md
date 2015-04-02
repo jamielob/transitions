@@ -22,11 +22,11 @@ Only 3 things are needed to make transitions work.
 
 ## Full page transitions using iron-router
 
-After adding and setting up the iron-router package, wrap your `{{>yield}}` in a `<div>` with a class of `transitions-container`. 
+After adding and setting up the iron-router package, wrap your `{{>yield}}` in a `<div>` with a class of `transitions-container`.   If you want the container to be full screen then you'll need to add `height: 100%;` to the container.
 
 ```
 <template name="yourLayoutTemplate">
-  <div class="transitions-container">
+  <div class="transitions-container" style="height:100%;">
     {{>yield}}
   </div>
 </template>
