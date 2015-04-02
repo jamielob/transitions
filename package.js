@@ -1,6 +1,6 @@
 Package.describe({
   name: 'jamielob:transitions',
-  version: '1.1.1',
+  version: '2.0.0',
   // Brief, one-line summary of the package.
   summary: 'Easy to use CSS3 transitions for Meteor.',
   // URL to the Git repository containing the source code for this package.
@@ -12,8 +12,9 @@ Package.describe({
 
 Package.onUse(function(api) {
   api.versionsFrom('1.0.5');
+  api.use('aldeed:template-extension@3.4.3');
   api.use(['templating'], 'client');
-  api.addFiles(['client/transitions.js','client/transitions.css']);
+  api.addFiles(['transitions.js','transitions.css']);
   api.export("Transitions");
 });
 

@@ -1,33 +1,38 @@
 # Meteor Transitions
 
-Easy to use CSS3 transitions for use in MeteorJS with iron:router.
+Easy to use CSS3 transitions for use in MeteorJS.
 
 **Demo**: http://transitions-demo.meteor.com
 
 **Demo Repository**: https://github.com/jamielob/transitions-demo
 
-## Example usage
+## Getting started
 
-Add the iron router and transitions packages to you your project:
+Add the transitions package to you your project:
 
 ```
-meteor add iron:router
 meteor add jamielob:transitions
 ```
 
-Set up your routes in iron:router an wrap your `{{>yield}}` in a `<div>` with an id of `transitions-container`.  This id can be configured to whatever you want if it conflicts for you (see configuration below)
+Only 3 things are needed to make transitions work.
+* A container div
+* A content div
+* Choosing the transitions you want to use for the in and out animations
+
+
+## Full page transitions using iron-router
+
+After adding and setting up the iron-router package, wrap your `{{>yield}}` in a `<div>` with a class of `transitions-container`. 
 
 ```
-  <div id="transitions-container">
+<template name="yourLayoutTemplate">
+  <div class="transitions-container">
     {{>yield}}
   </div>
+</template>
 ```
 
-Make sure any content that you want to transition is wrapped within a `<div>` with a class of `transitions-content` (also configurable).
-Any link that you want to transition must have two data attributes:  `data-transition-out` and `data-transition-in`.
-
-**data-transition-out** is the transition you would like applied to the outgoing page, the one your user is currently on.
-**data-transition-in** is the transtions to apply to the incoming page, the target of the link.
+Next, wrap your content on each template in a `<div>` with a class of `transitions-content`.
 
 ```
 <template name="page">
@@ -36,13 +41,45 @@ Any link that you want to transition must have two data attributes:  `data-trans
 	 </div>
 </template>
 ```
+Pick the in and out transition animations you want and set them on the link or button, using `data-transition-in` and `data-transition-out`.
+
+## Inline transitions using dynamic templates
+
+Wrap your dynamic template in a `<div>` with a class of `transitions-container`. 
+
+```
+  <div class="transitions-container">
+    {{> UI.dynamic template=dynamicTemplate}}
+  </div>
+```
+
+Next, wrap your content on each template in a `<div>` with a class of `transitions-content`.
+
+```
+<template name="dynamic1">
+	 <div class="transitions-content">
+	    Some content
+	 </div>
+</template>
+```
+Now, each time you switch the value of `dynamicTemplate`, the content with transition with the animation of your choice.  If you are triggering the change via a button or link, you can put the `data-transition-in` and `data-transition-out` on there as in the iron:router example.  Or you can set a default animation for all transitions to use.
+
+
 
 ## Configuration (Optional)
 
 You can set the id of the container and the class of the content to whatever you want like this:
+
 ```
-Transitions.container = '#custom-container';
+Transitions.container = '.custom-container';
 Transitions.content = '.custom-content';
+```
+
+You can set up default transitions so that all of your links will use.  For example:
+
+```
+Transitions.transitionIn = 'slideLeftIn';
+Transitions.transitionIn = 'slideLeftOut';
 ```
 
 ## Available Transitions
@@ -71,5 +108,4 @@ Build the transition name using the options below.  For example, slideUpIn and s
 
 ## Known Issues / To Do
 
-* Cube transition doesn't always display correctly (timing issue?) on iPhone Safari.  Needs the special class delay1 added to transition-in (as in demo).
-* Sweep needs delay100 or above to work consistently on iPhone (as in demo).
+* Sweep seems to need delay100 or above to work consistently on iPhone (as in demo).

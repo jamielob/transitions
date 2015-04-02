@@ -25,26 +25,23 @@ sweep
 
 /* Setup */
 
+
 html, body {
 	height:100%;
 }
 /* Set dynamically in JS to allow custom id and class names */
-/*
-#transitions-container {
+
+/*.transitions-container {
 	position: relative;
-	width: 100%;
-	height: 100%;
 	-webkit-perspective: 1200px;
 	-moz-perspective: 1200px;
 	perspective: 1200px;
 }
 .transitions-content {
-	width: 100%;
-	height: 100%;
-	position: absolute;
-	top: 0;
-	left: 0;
-	overflow: hidden;
+	width:100%;
+	height:100%;
+	overflow-y: scroll;
+    -webkit-overflow-scrolling: touch;
 	-webkit-backface-visibility: hidden;
 	-moz-backface-visibility: hidden;
 	backface-visibility: hidden;
@@ -58,21 +55,24 @@ html, body {
 */
 
 .transition-in {
-	z-index: -1;
+	position: absolute;
+	top:0;
+	left:0;
+	overflow:hidden;
 }
 .transition-out {
+	position: relative;
 	z-index: 888;
+	overflow:hidden;
 }
 .onTop,
 .transition-in.onTop,
 .transition-out.onTop {
 	z-index: 999;
 }
-/*Disable links while transitionin*/
-.transition-out a,
-.transition-in a {
+/*Class to disable links while transitionin*/
+.transition-button-disable {
    pointer-events: none;
-   cursor: default;
 }
 
 
