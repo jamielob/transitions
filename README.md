@@ -17,7 +17,7 @@ meteor add jamielob:transitions
 Only 3 things are needed to make transitions work.
 * A container div
 * A content div
-* Choosing the transitions you want to use for the in and out animations
+* Choosing the animations you want to use for the in and out transitions
 
 
 ## Full page transitions using iron-router
