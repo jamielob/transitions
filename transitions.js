@@ -52,6 +52,16 @@ Transitions = {};
                 }")
         .appendTo("head");
 
+      //Add click handlers to grab data-transitions  
+      $(document)
+      .on('click', '[data-transition-in]', function(event) {
+        transitionIn = $(event.currentTarget).data('transition-in');
+      })
+      .on('click', '[data-transition-out]', function(event) {
+        transitionOut = $(event.currentTarget).data('transition-out');
+      });
+
+
       //Runs once on each template
       //Uses aldeed:template-extension
       Template.onRendered(function() {
@@ -112,18 +122,6 @@ Transitions = {};
           }
         }
         
-
-      });
-
-      Template.layout.events({
-
-        'click [data-transition-in]': function(event) {
-          transitionIn = $(event.currentTarget).data('transition-in');
-        },
-
-         'click [data-transition-out]': function(event) {
-          transitionOut = $(event.currentTarget).data('transition-out');
-        }
 
       });
 
