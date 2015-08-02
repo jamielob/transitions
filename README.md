@@ -79,7 +79,7 @@ You can set up default transitions so that all of your links will use.  For exam
 
 ```
 Transitions.transitionIn = 'slideLeftIn';
-Transitions.transitionIn = 'slideLeftOut';
+Transitions.transitionOut = 'slideLeftOut';
 ```
 
 ## Available Transitions
