@@ -68,7 +68,7 @@ Now, each time you switch the value of `dynamicTemplate`, the content with trans
 
 ## Configuration (Optional)
 
-You can set the id of the container and the class of the content to whatever you want like this:
+You can set the classes of the container and content to whatever you want like this:
 
 ```
 Transitions.container = '.custom-container';
