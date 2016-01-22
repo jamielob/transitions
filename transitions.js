@@ -52,7 +52,7 @@ Transitions = {};
                 }")
         .appendTo("head");
 
-      //Add click handlers to grab data-transitions  
+      //Add click handlers to grab data-transitions
       $(document)
       .on('click', '[data-transition-in]', function(event) {
         transitionIn = $(event.currentTarget).data('transition-in');
@@ -65,13 +65,13 @@ Transitions = {};
       //Runs once on each template
       //Uses aldeed:template-extension
       Template.onRendered(function() {
-        
+
         transitionsContainer = this.find(containerName);
-        
+
         if (transitionsContainer) {
 
             transitionsContainer._uihooks = {
-        
+
             removeElement: function(node) {
               //Disable any transition buttons until transition is complete
               $('[data-transition-in],[data-transition-out]').addClass('transition-button-disable');
@@ -81,7 +81,7 @@ Transitions = {};
               animationDuration = UI._globalHelpers['s2ms']( $(node).css('animation-duration') );
               animationDelay = UI._globalHelpers['s2ms']( $(node).css('animation-delay') );
               animationDuration = animationDuration + animationDelay;
-              
+
               Meteor.setTimeout(function() {
                 $(node).remove();
                 transitionOut = defaultTransitionOut;
@@ -102,7 +102,7 @@ Transitions = {};
                 //Get the current height
                 prevHeight = $(node).parent(containerName).css('height');
                 //As long as its not zero, set the new height
-                if (prevHeight != "0px") $(node).parent(containerName).css('height', tempHeight);        
+                if (prevHeight != "0px") $(node).parent(containerName).css('height', tempHeight);
 
                 animationDuration = UI._globalHelpers['s2ms']( $(node).css('animation-duration') );
                 animationDelay = UI._globalHelpers['s2ms']( $(node).css('animation-delay') );
@@ -112,16 +112,17 @@ Transitions = {};
               Meteor.setTimeout(function() {
                 $(node).removeClass('transition-in delay1 ' + transitionIn);
                   //Restore previous height
-                  if (prevHeight != "0px") $(node).parent(containerName).css('height', prevHeight);  
+                  if (prevHeight != "0px") $(node).parent(containerName).css('height', prevHeight);
                   transitionIn = defaultTransitionIn;
                   //Re-enable transition
                   $('[data-transition-in],[data-transition-out]').removeClass('transition-button-disable');
-              }, animationDuration);  
+                  $(document).trigger('data-transition-done');
+              }, animationDuration);
 
             }
           }
         }
-        
+
 
       });
 
