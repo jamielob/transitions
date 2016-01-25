@@ -45,7 +45,7 @@ Pick the in and out transition animations you want and set them on the link or b
 
 ## Inline transitions using dynamic templates
 
-Wrap your dynamic template in a `<div>` with a class of `transitions-container`. 
+Wrap your dynamic template in a `<div>` with a class of `transitions-container`.
 
 ```
   <div class="transitions-container">
@@ -105,6 +105,35 @@ Build the transition name using the options below.  For example, slideUpIn and s
 **onTop**: Ensures that the transition remains on top. Needed for some transition combinations.  For example, you might decide to use roomUpIn and onTop together like so - `data-transition-in="roomUpIn onTop"`
 
 **delay100**: Delays the transition from started for set time in ms.  Available in 100 increments up to 1000.  For example - `data-transition-in="sweepUpIn delay500"`
+
+## Reacting when a transition is completed
+
+When the transition is completed, a `data-transition-done` event is triggered. You can capture it as shown below.
+
+```javascript
+$(document).on("data-transition-done", function() {
+  console.log("transition-done received")
+});
+```
+
+A simple example code that sets an `onRendered` callback which will change the _background-color_ right after the transition is completed can be done as follows.
+
+```javascript
+Template.onRendered(function() {
+
+  var _dependency = new Tracker.Dependency();
+
+  Tracker.autorun(function() {
+    _dependency.depend();
+    $('h1').first().css('background-color','green');
+  });
+
+  $(document).on("data-transition-done", function() {
+    _dependency.changed();
+  });
+
+});
+```
 
 ## Known Issues / To Do
 
