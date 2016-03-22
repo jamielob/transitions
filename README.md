@@ -134,6 +134,25 @@ Template.onRendered(function() {
 
 });
 ```
+## Jade Compatibility
+By default this package doesnt support jade completely. You can however use a combination of jade and HTML Templates. You just have to make sure that your main transitions-container div is inside an HTML template, and then you can use Jade templates for all of your other templates. Here is a simple example:
+
+layout.html:
+```
+<template name="layout">  
+    <div class="transitions-container" style="height:100%">
+        {{> yield}}
+    </div>
+</template>
+```
+
+home.tpl.jade (which uses the layout template above):
+```
+.transitions-content    
+        a.home-menu-link(href="{{pathFor 'page2'}}" data-transition-out="slideFadeLeftOut" data-transition-in="slideFadeRightIn") page2     
+```
+
+See [this issue](https://github.com/jamielob/transitions/issues/11) for more details.
 
 ## Known Issues / To Do
 
